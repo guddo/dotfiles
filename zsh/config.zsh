@@ -1,6 +1,10 @@
 if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+  export TERM='xterm-256color'
   export PS1='%m:%3~$(git_info_for_prompt)%# '
 else
+  export EDITOR='vim'
+  export TERM='xterm-256color'
   export PS1='%3~$(git_info_for_prompt)%# '
 fi
 
@@ -14,6 +18,7 @@ autoload -U $ZSH/functions/*(:t)
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
+HIST_STAMPS="dd.mm.yyyy"
 
 setopt NO_BG_NICE # don't nice background tasks
 setopt NO_HUP
@@ -46,3 +51,17 @@ bindkey '^[[5C' end-of-line
 bindkey '^[[3~' delete-char
 bindkey '^[^N' newtab
 bindkey '^?' backward-delete-char
+
+# custom shizzle
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+DEFAULT_USER="guddo"
+
+export ZSH=$HOME/.oh-my-zsh
+source $ZSH/oh-my-zsh.sh
+ZSH_THEME="agnoster"
+plugins=(git command-coloring osx github phing git-flow textmate autojump brew command-not-found common-aliases dirhistory gitfast git-extras jira per-directory-history repo sudo web-search)
+
+COMPLETION_WAITING_DOTS="true"
+

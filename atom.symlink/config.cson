@@ -16,7 +16,7 @@
     ]
     themes: [
       "unity-ui"
-      "glacier-syntax"
+      "atom-dark-syntax"
     ]
     hideGitIgnoredFiles: true
     disabledPackages: [
